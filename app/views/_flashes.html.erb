@@ -1,0 +1,15 @@
+<% if flash[:notice].present? %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      Shopify.API.flashNotice("<%= j flash[:notice] %>")
+    });
+  </script>
+<% end %>
+
+<% if flash[:error].present? %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      Shopify.API.flashError("<%= j flash[:error] %>")
+    });
+  </script>
+<% end %>

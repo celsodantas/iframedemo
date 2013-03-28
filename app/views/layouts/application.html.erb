@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>iFrame Demo App</title>
+  
+  <%= javascript_include_tag 'http://shop1.localhost:3000/admin/api/api.js' %>
+  
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  
+  <%= render '/flashes' %>
+  
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

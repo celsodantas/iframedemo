@@ -1,0 +1,14 @@
+<script type="text/javascript">
+  Shopify.API.addMessageHandler(function(message, data){
+    if(message == 'Shopify.API.initialize'){
+      Shopify.API.Bar.setTitle("Edit Thing: <%= j @thing.title %>");
+    }
+  });
+</script>
+
+<h1>Editing thing</h1>
+
+<%= render partial: 'form', locals: {submit_message: "bar_save"} %>
+
+<%= link_to 'Show', @thing %> |
+<%= link_to 'Back', things_path %>

@@ -1,0 +1,21 @@
+<script type="text/javascript">
+  Shopify.API.addMessageHandler(function(message, data){
+    if(message == 'Shopify.API.initialize'){
+      Shopify.API.Bar.setTitle("Thing: <%= j @thing.title %>");
+    }
+  });
+</script>
+
+<p>
+  <b>Title:</b>
+  <%= @thing.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @thing.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_thing_path(@thing) %> |
+<%= link_to 'Back', things_path %>
