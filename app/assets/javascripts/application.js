@@ -4,7 +4,7 @@
 
 Shopify.API.debug = true;
 
-Shopify.API.addMessageHandler('Shopify.API.initialize', function(message, data) {
+Shopify.API.ready(function(){
   Shopify.API.Bar.initialize({
     'primaryButton': {label: "Save", message: 'bar_save'},
     'buttons': [ 
@@ -28,6 +28,7 @@ Shopify.API.addMessageHandler('bar_cancel', function(message, data) {
   window.location = "/things"
 });
 
+
 window.newThingModal = function(path){
   Shopify.API.Modal.open({
     'src': path,
@@ -37,7 +38,7 @@ window.newThingModal = function(path){
   });
 
   Shopify.API.addMessageHandler('modal_cancel', function(message, data) {
-    Shopify.API.Modal.close();
+    Shopify.API.Modal.close();  // optionally close with a data set
   });
 }
 

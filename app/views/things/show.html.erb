@@ -1,8 +1,6 @@
 <script type="text/javascript">
-  Shopify.API.addMessageHandler(function(message, data){
-    if(message == 'Shopify.API.initialize'){
-      Shopify.API.Bar.setTitle("Thing: <%= j @thing.title %>");
-    }
+  Shopify.API.ready(function(){
+    Shopify.API.Bar.setTitle("Thing: <%= j @thing.title %>");
   });
 </script>
 
