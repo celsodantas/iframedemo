@@ -8,33 +8,30 @@ Shopify.API.ready(function(){
   Shopify.API.Bar.initialize({
     'primaryButton': {label: "Save", message: 'bar_save'},
     'buttons': [ 
-      { label: "Help", message: 'bar_help'}, 
-      { label: "Cancel", message: 'bar_cancel'}
+      { label: "Help", action: function(){ alert('help'); } }, 
+      { label: "Cancel", action: function(){ alert('cancel'); } }
     ]
   });
 
   Shopify.API.Bar.loadingOff();
 });
 
-Shopify.API.addMessageHandler(function(message, data) {
-  // called on every message received
-});
+// Shopify.API.addMessageHandler(function(message, data) {
+//   // called on every message received
+// });
 
-Shopify.API.addMessageHandler('bar_help', function(message, data) {
-  alert('No help here');
-});
-
-Shopify.API.addMessageHandler('bar_cancel', function(message, data) {
-  window.location = "/things"
-});
-
+// Shopify.API.addMessageHandler('bar_help', function(message, data) {
+//   alert('No help here');
+// });
 
 window.newThingModal = function(path){
   Shopify.API.Modal.open({
     'src': path,
     'title': 'New Thing', 
     'primaryButton': { label: "OK", message: 'modal_ok'},
-    'buttons': [ { label: "Cancel", message: 'modal_cancel'} ]
+    'buttons': [ { label: "Cancel", message: 'modal_cancel'} ], 
+  }, function(result, data){
+    alert("result: " + result + "   data: " + data);
   });
 
   Shopify.API.addMessageHandler('modal_cancel', function(message, data) {
