@@ -1,0 +1,26 @@
+<script type="text/javascript">
+  Shopify.API.ready(function(){
+    Shopify.API.Bar.initialize({
+      'title': 'Edit: <%= j @unicorn.name %>',
+      'icon': 'http://localhost:3001/icon.png',
+      'primaryButton': { 'label': 'save', 'message': 'edit_unicorn_save' }
+      'buttons': [ 
+        { label: "Back", action: function(){ window.location = '/unicorns'; } },
+        { label: "Edit", action: function(){ window.location = '<%= edit_unicorn_url(@unicorn) %>'; } },
+        { label: "Help", action: function(){ alert('View the project README for real help.'); } }
+      ]
+    });
+
+    Shopify.API.Bar.loadingOff();
+  });
+</script>
+
+<p>
+  <b>Name:</b>
+  <%= @unicorn.name %>
+</p>
+
+<p>
+  <b>Magical powers:</b>
+  <%= @unicorn.magical_powers %>
+</p>

@@ -183,6 +183,23 @@ A property that defaults to false. Can be set to true and will safely `console.l
     Shopify.API.debug = true;
 
 
+### Magic data attributes
+
+#### `data-shopify-api-submit`
+
+On a form, add the attribute `data-shopify-api-submit` with the value matching the `message` value of one of the title bar buttons. When the button is clicked, it will automatically submit that form.
+
+    <script type="text/javascript">
+      Shopify.API.ready(function(){
+        Shopify.API.Bar.initialize({
+          'primaryButton': { 'label': 'Save', 'message': 'unicorn_form_submit' }
+        });
+      });
+    </script>
+    <form data-shopify-api-submit="unicorn_form_submit">
+      ...
+    </form>
+
 ## Problems, questions, or contributions
 
 This API is in development and may change. If you are having problems or have questions contact Kevin McPhillips.

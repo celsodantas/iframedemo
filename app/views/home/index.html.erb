@@ -1,0 +1,34 @@
+<script type="text/javascript">
+  window.mainPageTitle = 'Main Page';
+
+  Shopify.API.ready(function(){
+    Shopify.API.Bar.initialize({
+      'title': window.mainPageTitle,
+      'icon': 'http://localhost:3001/icon.png',
+      'buttons': [ 
+        { label: "Help", action: function(){ alert('View the project README for real help.'); } }
+      ]
+    });
+
+    Shopify.API.Bar.loadingOff();
+  });
+</script>
+
+<h1>Shopify App iFrame Integration Demo</h1>
+
+<p>This application demos all the various ways an app can now interact with the admin. See the README for details.</p>
+
+<h2>Demo Pages</h2>
+<ul>
+  <li><%= link_to "A CRUD resource using an iframe modal", unicorns_path %></li>
+  <li><%= link_to "Built in modal examples", modals_path %></li>
+  <li><%= link_to "A page without API calls", default_path %></li>
+  <li><%= link_to "A page where it does not specify an icon", no_icon_path %></li>
+</ul>
+
+<h2>Function calls</h2>
+<ul>
+  <li><%= link_to_function "Turn spinner off", "Shopify.API.Bar.loadingOff()" %></li>
+  <li><%= link_to_function "Turn spinner on", "Shopify.API.Bar.loadingOn()" %></li>
+  <li><%= link_to_function "Add an exclamation mark to the title", "window.mainPageTitle = window.mainPageTitle + '!'; Shopify.API.Bar.setTitle(window.mainPageTitle)" %></li>
+</ul>

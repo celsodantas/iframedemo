@@ -1,0 +1,10 @@
+<%= form_for(@unicorn, html: {id: "unicorn-form", :'data-shopify-api-submit' => submit_message}) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :magical_powers %><br />
+    <%= f.text_area :magical_powers %>
+  </div>
+<% end %>

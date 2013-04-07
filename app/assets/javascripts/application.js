@@ -4,38 +4,15 @@
 
 Shopify.API.debug = true;
 
-Shopify.API.ready(function(){
-  Shopify.API.Bar.initialize({
-    'primaryButton': {label: "Save", message: 'bar_save'},
-    'buttons': [ 
-      { label: "Help", action: function(){ alert('help'); } }, 
-      { label: "Cancel", action: function(){ alert('cancel'); } }
-    ]
-  });
 
-  Shopify.API.Bar.loadingOff();
-});
-
-// Shopify.API.addMessageHandler(function(message, data) {
-//   // called on every message received
-// });
-
-// Shopify.API.addMessageHandler('bar_help', function(message, data) {
-//   alert('No help here');
-// });
-
-window.newThingModal = function(path){
+window.newModal = function(path, title){
   Shopify.API.Modal.open({
     'src': path,
-    'title': 'New Thing', 
-    'primaryButton': { label: "OK", message: 'modal_ok'},
-    'buttons': [ { label: "Cancel", message: 'modal_cancel'} ], 
+    'title': title, 
+    'primaryButton': { label: "OK" },
+    'buttons': [ { label: "Cancel" } ], 
   }, function(result, data){
     alert("result: " + result + "   data: " + data);
-  });
-
-  Shopify.API.addMessageHandler('modal_cancel', function(message, data) {
-    Shopify.API.Modal.close();  // optionally close with a data set
   });
 }
 

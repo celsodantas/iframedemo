@@ -1,0 +1,41 @@
+<script type="text/javascript">
+  Shopify.API.ready(function(){
+    Shopify.API.Bar.initialize({
+      'title': 'Unicorns',
+      'icon': 'http://localhost:3001/icon.png',
+      'buttons': [ 
+        { label: "Back", action: function(){ window.location = "/"; } },
+        { label: "New Unicorn", action: function(){ newModal('#{new_unicorn_url}', 'New unicorn'); } },
+        { label: "Help", action: function(){ alert('View the project README for real help.'); } }
+      ]
+    });
+
+    Shopify.API.Bar.loadingOff();
+  });
+</script>
+
+<h1>Listing unicorns</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Magical powers</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @unicorns.each do |unicorn| %>
+  <tr>
+    <td><%= unicorn.name %></td>
+    <td><%= unicorn.magical_powers %></td>
+    <td><%= link_to 'Show', unicorn %></td>
+    <td><%= link_to 'Edit', edit_unicorn_path(unicorn) %></td>
+    <td><%= link_to_function 'Destroy', "shopifyDeleteConfirm('#{unicorn_path(unicorn)}', 'Are you sure you want to delete this unicorn?')"%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to_function 'New Unicorn', "newModal('#{new_unicorn_url}', 'New unicorn')" %>

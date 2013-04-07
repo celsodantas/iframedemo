@@ -1,0 +1,17 @@
+<script type="text/javascript">
+  Shopify.API.ready(function(){
+    Shopify.API.Bar.initialize({
+      'title': 'No Icon',
+      'buttons': [ 
+        { label: "Back", action: function(){ window.location = "/"; } },
+        { label: "Help", action: function(){ alert('View the project README for real help.'); } }
+      ]
+    });
+
+    Shopify.API.Bar.loadingOff();
+  });
+</script>
+
+<h1>No icon specified for the top bar</h1>
+
+<p><%= link_to "Back", root_path %></p>

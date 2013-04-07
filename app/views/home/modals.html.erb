@@ -1,0 +1,34 @@
+<script type="text/javascript">
+  Shopify.API.ready(function(){
+    Shopify.API.Bar.initialize({
+      'title': 'Modal WIndows',
+      'buttons': [ 
+        { label: "Back", action: function(){ window.location = "/"; } },
+        { label: "Help", action: function(){ alert('View the project README for real help.'); } }
+      ]
+    });
+
+    Shopify.API.Bar.loadingOff();
+  });
+</script>
+
+<h1>Modal window examples</h1>
+
+<script type="text/javascript">
+  function printResult(type, result, data){
+    $("#resuts").append(type + " closed  result=" + result + "  data=" + data);
+    $("#resuts").append("<br />");
+  }
+</script>
+
+<p>
+  <%= button_to_function "Open alert modal", "Shopify.API.Modal.alert('This is a test message.', function(result, data){ printResult('Alert', result, data) })" %>
+  <%= button_to_function "Open alert confirm", "Shopify.API.Modal.confirm('Are you sure?', function(result, data){ printResult('Confirm', result, data) })" %>
+  <%= button_to_function "Open alert input", "Shopify.API.Modal.input('Enter a value.', function(result, data){ printResult('Input', result, data) })" %>
+</p>
+
+<h2>Results</h2>
+
+<p id="results" style="background-color: #ccc; padding: 10px; margin: 10px"
+
+<p><%= link_to "Back", root_path %></p>

@@ -1,0 +1,19 @@
+<script type="text/javascript">
+  Shopify.API.ready(function(){
+    Shopify.API.Bar.initialize({
+      'title': 'Edit: <%= j @unicorn.name %>',
+      'icon': 'http://localhost:3001/icon.png',
+      'primaryButton': { 'label': 'save', 'message': 'edit_unicorn_save' }
+      'buttons': [ 
+        { label: "Cancel", action: function(){ window.location = '/unicorns'; } },
+        { label: "Help", action: function(){ alert('View the project README for real help.'); } }
+      ]
+    });
+
+    Shopify.API.Bar.loadingOff();
+  });
+</script>
+
+<h1>Editing unicorn</h1>
+
+<%= render partial: 'form', locals: {submit_message: "edit_unicorn_save"}  %>
