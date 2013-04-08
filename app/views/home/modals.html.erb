@@ -12,12 +12,10 @@
   });
 </script>
 
-<h1>Modal window examples</h1>
-
 <script type="text/javascript">
   function printResult(type, result, data){
-    $("#resuts").append(type + " closed  result=" + result + "  data=" + data);
-    $("#resuts").append("<br />");
+    $("#results").append(type + " closed  result=" + result + "  data=" + data);
+    $("#results").append("<br />");
   }
 </script>
 
@@ -29,6 +27,6 @@
 
 <h2>Results</h2>
 
-<p id="results" style="background-color: #ccc; padding: 10px; margin: 10px"
+<p id="results" style="background-color: #eee; padding: 10px; margin: 10px"></p>
 
 <p><%= link_to "Back", root_path %></p>
