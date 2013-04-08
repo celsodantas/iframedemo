@@ -10,9 +10,11 @@ window.newModal = function(path, title){
     'src': path,
     'title': title, 
     'primaryButton': { label: "OK", message: "modal_ok" },
-    'buttons': [ { label: "Cancel",  } ], 
+    'buttons': [ { label: "Cancel", action: function(message){ Shopify.API.Modal.close(false); } } ], 
   }, function(result, data){
-    alert("result: " + result + "   data: " + data);
+    if(result){
+      window.location = "/unicorns";
+    }
   });
 }
 
