@@ -9,8 +9,8 @@ window.newModal = function(path, title){
   Shopify.API.Modal.open({
     'src': path,
     'title': title, 
-    'primaryButton': { label: "OK" },
-    'buttons': [ { label: "Cancel" } ], 
+    'primaryButton': { label: "OK", message: "modal_ok" },
+    'buttons': [ { label: "Cancel",  } ], 
   }, function(result, data){
     alert("result: " + result + "   data: " + data);
   });
@@ -34,8 +34,8 @@ window.shopifyDeleteConfirm = function(location, message) {
   if(!message) {
     message = 'Are you sure you want to delete this?';
   }
-  Shopify.API.Modal.confirm(message, function(data){
-    if(data.result){
+  Shopify.API.Modal.confirm(message, function(result, data){
+    if(result){
       deleteFormSubmit(location);
     }
   });

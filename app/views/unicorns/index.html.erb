@@ -20,18 +20,23 @@
   <tr>
     <th>Name</th>
     <th>Magical powers</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Actions</th>
   </tr>
 
 <% @unicorns.each do |unicorn| %>
   <tr>
     <td><%= unicorn.name %></td>
     <td><%= unicorn.magical_powers %></td>
-    <td><%= link_to 'Show', unicorn %></td>
-    <td><%= link_to 'Edit', edit_unicorn_path(unicorn) %></td>
-    <td><%= link_to_function 'Destroy', "shopifyDeleteConfirm('#{unicorn_path(unicorn)}', 'Are you sure you want to delete this unicorn?')"%></td>
+    <td>
+      <%= link_to 'Show', unicorn %>
+      <%= link_to 'Edit', edit_unicorn_path(unicorn) %>
+      <%= link_to_function 'Destroy', "shopifyDeleteConfirm('#{unicorn_path(unicorn)}', 'Are you sure you want to delete this unicorn?')"%>
+    </td>
+  </tr>
+<% end %>
+<% if @unicorns.blank? %>
+  <tr>
+    <td colspan="5">None</td>
   </tr>
 <% end %>
 </table>
