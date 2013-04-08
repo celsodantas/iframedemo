@@ -5,7 +5,7 @@
       'icon': 'http://localhost:3001/icon.png',
       'buttons': [ 
         { label: "Back", action: function(){ window.location = "/"; } },
-        { label: "New Unicorn", action: function(){ newModal('#{new_unicorn_url}', 'New unicorn'); } },
+        { label: "New Unicorn", action: function(){ newModal('<%= new_unicorn_url %>', 'New unicorn'); } },
         { label: "Help", action: function(){ alert('View the project README for real help.'); } }
       ]
     });
