@@ -1,0 +1,17 @@
+<script type="text/javascript">
+  Shopify.API.ready(function(){
+    Shopify.API.Bar.initialize({
+      'icon': 'http://localhost:3001/icon.png',
+      'buttons': [
+        { label: "Back", action: function(){ window.location = "/"; } },
+        { label: "Help", action: function(){ alert('View the project README for real help.'); } }
+      ]
+    });
+
+    Shopify.API.Bar.loadingOff();
+  });
+</script>
+
+<p>No title is specified for the top bar, so it looks like the root.</p>
+
+<p><%= link_to "Back", root_path %></p>
