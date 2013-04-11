@@ -8,9 +8,9 @@ Shopify.API.debug = true;
 window.newModal = function(path, title){
   Shopify.API.Modal.open({
     'src': path,
-    'title': title, 
-    'primaryButton': { label: "OK", message: "modal_ok" },
-    'buttons': [ { label: "Cancel", action: function(message){ Shopify.API.Modal.close(false); } } ], 
+    'title': title,
+    'primaryButton': { label: "OK" },
+    'buttons': [ { label: "Cancel", action: function(message){ Shopify.API.Modal.close(false); } } ],
   }, function(result, data){
     if(result){
       window.location = "/unicorns";
@@ -29,7 +29,7 @@ window.deleteFormSubmit = function(location) {
   h.setAttribute('value', 'delete');
   form.appendChild(h);
   document.body.appendChild(form);
-  form.submit(); 
+  form.submit();
 }
 
 window.shopifyDeleteConfirm = function(location, message) {

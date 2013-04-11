@@ -2,7 +2,7 @@
   Shopify.API.ready(function(){
     Shopify.API.Bar.initialize({
       'title': 'Modal WIndows',
-      'buttons': [ 
+      'buttons': [
         { label: "Back", action: function(){ window.location = "/"; } },
         { label: "Help", action: function(){ alert('View the project README for real help.'); } }
       ]
@@ -21,8 +21,8 @@
 
 <p>
   <%= button_to_function "Open alert modal", "Shopify.API.Modal.alert('This is a test message.', function(result, data){ printResult('Alert', result, data) })" %>
-  <%= button_to_function "Open alert confirm", "Shopify.API.Modal.confirm('Are you sure?', function(result, data){ printResult('Confirm', result, data) })" %>
-  <%= button_to_function "Open alert input", "Shopify.API.Modal.input('Enter a value.', function(result, data){ printResult('Input', result, data) })" %>
+  <%= button_to_function "Open confirm modal", "Shopify.API.Modal.confirm('Are you sure?', function(result, data){ printResult('Confirm', result, data) })" %>
+  <%= button_to_function "Open input modal", "Shopify.API.Modal.input('Enter a value.', function(result, data){ printResult('Input', result, data) })" %>
 </p>
 
 <h2>Results</h2>
