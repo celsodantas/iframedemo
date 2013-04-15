@@ -60,7 +60,7 @@ Works similarly to jQuery's `ready()` function. It can be called many times on a
     Shopify.API.ready(function(){
       alert("Ready");
     });
-    
+
 
 #### `Shopify.API.pushState(path)`
 
@@ -105,8 +105,8 @@ A button object has a required `label` field for the button text. It has optiona
 
     Shopify.API.Bar.initialize({
       'primaryButton': {label: "Save", message: 'bar_save'},
-      'buttons': [ 
-        { label: "Help", action: function(){ alert('help'); } }, 
+      'buttons': [
+        { label: "Help", action: function(){ alert('help'); } },
         { label: "Cancel", action: function(){ alert('cancel'); } }
       ],
       'title': 'Page Title',
@@ -119,7 +119,7 @@ Stops the loading spinner. Should probably be called on every page in `ready()`.
 
 #### `Shopify.API.Bar.loadingOn()`
 
-Restarts the spinner.
+Restarts the spinner. Good practice to call it when moving between pages.
 
 #### `Shopify.API.Bar.setTitle(title)`
 
@@ -129,15 +129,15 @@ Manually set the title string in the top bar. See `initialize()`.
 
 Manually set the icon of the top bar from a URL. See `initialize()`.
 
-#### `Shopify.API.Modal.open`
+#### `Shopify.API.Modal.open(init, fn)`
 
 Opens a modal dialog in the Shopify admin that in turn loads an iframe inside of it with the passed in URL. It accepts a `src` URL to be loaded, a `title` for the top of the bar, and a configuration of primary and secondary buttons identical to `Bar.initialize()`. It also accepts a callback function that is called when the modal is closed.
 
     Shopify.API.Modal.open({
       'src': 'https://example.com/app/path',
-      'title': 'A new modal', 
+      'title': 'A new modal',
       'primaryButton': { label: "OK" },
-      'buttons': [ { label: "Cancel" } ], 
+      'buttons': [ { label: "Cancel" } ],
     }, function(result, data){
       alert("result: " + result + "   data: " + data);
     });
@@ -146,7 +146,7 @@ Opens a modal dialog in the Shopify admin that in turn loads an iframe inside of
 
 Opens a Javascript style `alert()` in the admin. When the modal is closed the optional callback is called and a modal close message is sent.
 
-    Shopify.API.Modal.alert("An alert message", function(message, data){
+    Shopify.API.Modal.alert("An alert message", function(result){
       alert("The modal was closed.");
     });
 
@@ -154,8 +154,8 @@ Opens a Javascript style `alert()` in the admin. When the modal is closed the op
 
 Opens a Javascript style `confirm()` in the admin. When the modal is closed the optional callback is called and a modal close message is sent. The callback has the status of the closure passed in.
 
-    Shopify.API.Modal.confirm("Are you sure you want to?", function(message, data){
-      if(message){
+    Shopify.API.Modal.confirm("Are you sure you want to?", function(result){
+      if(result){
         alert("yeah they're sure");
       }
       else{
@@ -167,8 +167,8 @@ Opens a Javascript style `confirm()` in the admin. When the modal is closed the 
 
 Opens a Javascript style `input()` dialog in the admin. When the modal is closed the optional callback is called and a modal close message is sent. The callback has the status of the closure and the contents of the input box passed in.
 
-    Shopify.API.Modal.input("Please enter some data.", function(message, data){
-      if(message){
+    Shopify.API.Modal.input("Please enter some data.", function(result, data){
+      if(result){
         alert("entered" + data);
       }
       else{
