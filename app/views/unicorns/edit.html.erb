@@ -4,7 +4,7 @@
       'title': 'Edit: <%= j @unicorn.name %>',
       'icon': 'http://localhost:3001/icon.png',
       'primaryButton': { 'label': 'Save', 'message': 'edit_unicorn_save' },
-      'buttons': [ 
+      'buttons': [
         { label: "Cancel", action: function(){ window.location = '/unicorns'; } },
         { label: "Show", action: function(){ window.location = '<%= unicorn_path(@unicorn) %>'; } },
         { label: "Help", action: function(){ alert('View the project README for real help.'); } }

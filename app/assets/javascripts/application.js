@@ -9,7 +9,7 @@ window.newModal = function(path, title){
   Shopify.API.Modal.open({
     'src': path,
     'title': title,
-    'primaryButton': { label: "OK" },
+    'primaryButton': { label: "OK", message: 'modal_ok'},
     'buttons': [ { label: "Cancel", action: function(message){ Shopify.API.Modal.close(false); } } ],
   }, function(result, data){
     if(result){

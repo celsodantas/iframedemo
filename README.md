@@ -78,18 +78,6 @@ Displays a message in the Shopify admin chrome styled as an error.
 
     Shopify.API.flashError("Unicorn could not be created.");
 
-#### `Shopify.API.addMessageHandler(message, fn)` or `Shopify.API.addMessageHandler(fn)`
-
-Adds a handler that listens for messages from the Shopify admin and calls the function when they are received. If called with just a function, it will execute on every message.
-
-    Shopify.API.addMessageHandler('a_message' function(){
-      alert("received 'a_message' from the admin");
-    });
-
-#### `Shopify.API.clearMessageHandlers(message)`
-
-Removes all previously defined handlers (as above) for the passed in message. If the message is undefined, all handlers are removed.
-
 #### `Shopify.API.Bar.initialize(config)`
 
 Accepts an object that defines how the top bar and buttons will look and behave. This should almost always be called in the `ready()` method. Default behaviour if `initialize` is never called will result in some pretty safe defaults, except that the loading spinner will never stop spinning.
