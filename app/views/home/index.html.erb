@@ -32,4 +32,5 @@
   <li><%= link_to_function "Turn spinner off", "Shopify.API.Bar.loadingOff()" %></li>
   <li><%= link_to_function "Turn spinner on", "Shopify.API.Bar.loadingOn()" %></li>
   <li><%= link_to_function "Add an exclamation mark to the title", "window.mainPageTitle = window.mainPageTitle + '!'; Shopify.API.Bar.setTitle(window.mainPageTitle)" %></li>
+  <li><%= link_to_function "Redirect to /orders within the admin", "Shopify.API.redirect('/orders')" %></li>
 </ul>
