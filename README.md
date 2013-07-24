@@ -46,7 +46,7 @@ Create an application API client running locally. Be sure the callback URL is se
 
 All docs have been moved here:
 
-https://gist.github.com/kmcphillips/2ea9849619eeb27396e0
+https://github.com/Shopify/assets/wiki/Embedded-App-API
 
 
 ## Problems, questions, or contributions
