@@ -1,0 +1,24 @@
+<script type="text/javascript">
+  Shopify.API.ready(function(){
+    Shopify.API.Bar.initialize({
+      'title': 'Arguments',
+      'buttons': [
+        { label: "Back", action: function(){ window.location = "/"; } },
+        { label: "Help", action: function(){ alert('View the project README for real help.'); } }
+      ]
+    });
+
+    Shopify.API.Bar.loadingOff();
+  });
+</script>
+
+<h2>Arguments passed in</h2>
+
+<p id="results" style="background-color: #eee; padding: 10px; margin: 10px">
+  <% params.each do |key, value| %>
+    <strong><%= key %></strong> => <%= value %>
+    <br>
+  <% end %>
+</p>
+
+<p><%= link_to "Back", root_path %></p>

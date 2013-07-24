@@ -14,5 +14,8 @@ class HomeController < ApplicationController
 
   def no_title
   end
+  
+  def arguments
+  end
 
 end
